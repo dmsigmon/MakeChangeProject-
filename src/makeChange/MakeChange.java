@@ -7,18 +7,13 @@ public class MakeChange {
 	public static void main(String[] args) {
 		Scanner kb = new Scanner(System.in);
 
+		double change = 0;
+		
 		System.out.println("How much did this item cost?");
 		double cost = kb.nextDouble();
-
-		System.out.println("How much money did the customer give you?");
+		
+		System.out.println("How much money will you be paying today?");
 		double moneyRecieved = kb.nextDouble();
-
-		//counters for money
-		int ten = 0, five = 0, one = 0, quarter = 0,
-			dime = 0, nickle = 0, penny = 0;
-
-		double change = 0;
-
 		if (cost == moneyRecieved) {
 			System.out.println("Thank you for exact change as there is a change shortage due to COVID19!!");
 		} else if (cost > moneyRecieved) {
@@ -28,26 +23,71 @@ public class MakeChange {
 			change = (int)((moneyRecieved - cost) * 100);
 		}
 		
+		changeOwed(change);
+		
+		luckyWinner();
+		kb.close();
+		
+	}
+
+	private static void luckyWinner() {
+		System.out.println("                CONGRATULATIONS YOU'VE WON!!!                ");
+		System.out.println("          ONE FREE MEAL AT ANY SIGMON RESTURAUNT             ");
+		System.out.println("use code: SkilDistillery for 10% off of your next online order");
+		
+	}
+
+	private static void changeOwed(double change) {
+		int ten = 0, five = 0, one = 0, quarter = 0,
+				dime = 0, nickle = 0, penny = 0;
+		
+		
+		System.out.println("Thank you for shopping at DOUG-MART,"
+				+ "\nYour Change will be dispnesed in the following denominations:");
+		System.out.println();
+		
 		ten = (int)change/1000;
 		change %= 1000;
-		System.out.println(ten);
+		if(ten != 0) {
+			System.out.println("\tTens: " + ten);
+		}
+		
 		five = (int)change/500;
 		change %= 500;
-		System.out.println(five);
+		if(five != 0) {
+			System.out.println("\tFives: " + five);
+		}
+		
 		one = (int)change/100;
 		change %= 100;
-		System.out.println(one);
+		if(one != 0) {
+			System.out.println("\tDollars:" + one);
+		}
+		
 		quarter = (int)change/25;
 		change %= 25;
-		System.out.println(quarter);
+		if(quarter != 0) {
+			System.out.println("\tQuarters: " + quarter);
+		}
+		
 		dime = (int)change/10;
 		change %= 10;
-		System.out.println(dime);
+		if(dime != 0) {
+			System.out.println("\tDimes: " + dime);
+		}
+		
 		nickle = (int)change/5;
 		change %= 5;
-		System.out.println(nickle);
+		if(nickle != 0) {
+			System.out.println("\tNickles:" + nickle);
+		}
+		
 		penny = (int)change;
-		System.out.println(penny);
+		if(penny != 0) {
+			System.out.println("\tPennies: " + penny);
+		}
+		System.out.println();
+		
 		
 		
 	}

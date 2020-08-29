@@ -1,12 +1,13 @@
 ## Make Change Project
 
 ### Overview
-this is where ill put a summary of my project
+Project was to make a cash register that accepted 20 dollar bills and
+returned change back to the customer in the correct denominations.
 
 ### Topics
-* Taking user input
+* Taking User Input
 * Casting
 * Methods
-
-### How to Run
-instructions on how to run the project 
+* operators
+* Data Types
+* Expressions 
