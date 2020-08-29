@@ -9,10 +9,10 @@ public class MakeChange {
 
 		double change = 0;
 		
-		System.out.println("How much did this item cost?");
+		System.out.println("Enter how much did this item cost? ($XX.xx)");
 		double cost = kb.nextDouble();
 		
-		System.out.println("How much money will you be paying today?");
+		System.out.println("Enter how much money will you be paying today? ($XX.xx)");
 		double moneyRecieved = kb.nextDouble();
 		if (cost == moneyRecieved) {
 			System.out.println("Thank you for exact change as there is a change shortage due to COVID19!!");
